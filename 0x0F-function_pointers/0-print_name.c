@@ -2,16 +2,16 @@
 #include <stdlib.h>
 
 /**
- * print_name - Displays a given name using a provided function.
+ * print_name - Display a given name using a specified function.
  * @name: The name to be displayed.
- * @f: A function that handles the display of the name.
+ * @f: A pointer to a function that will be used to display the name.
+ * 
+ * This function takes a name and a function pointer as arguments.
+ * If the function pointer is not NULL, it uses the provided function
+ * to display the given name.
  */
 void print_name(char *name, void (*f)(char *))
 {
-    if (name == NULL || f == NULL)
-        return;
-    
-    // Call the provided function to display the name.
-    f(name);
+    if (f != NULL)
+        f(name);
 }
-
